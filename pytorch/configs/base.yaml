@@ -1,0 +1,16 @@
+# Base yaml file
+program: train.py
+method: random
+run_cap: 50
+metric:
+  goal: maximize
+  name: val_acc
+parameters:
+  final_model:
+      value: False
+  trainer:
+    parameters:
+      max_epochs:
+        value: 30
+  fine_tuning:
+    value: False

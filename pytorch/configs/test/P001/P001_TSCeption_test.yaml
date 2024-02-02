@@ -1,0 +1,60 @@
+#sweep: 25
+name: test_P001_TSCeption
+program: train.py
+method: random
+run_cap: 1
+metric:
+  goal: maximize
+  name: val_acc
+parameters:
+  final_model:
+    value: True
+  trainer:
+    parameters:
+      max_epochs:
+        value: 30 
+  datamodule:
+    parameters:
+      data_dir: 
+        value: "./data/preprocessed/wet/P001"
+      test_dir:
+        value: "./data/test_sets/sub_P001/wet"
+      test_run:
+        value: "sub-P001_ses-S003_task-Default_run-003_eeg" #test set
+      batch_size:
+        value: 128
+      num_workers:
+        value: 0
+      seed:
+        value: 42
+  model_name: 
+    value: TSCEPTION
+  model:
+    parameters:
+      #General
+      num_classes:
+        value: 20
+      input_size:
+        value: [8, 500]
+      sampling_rate: 
+        value: 250
+      lr:
+        value: 0.007546037269469756
+      one_cycle_lr:
+        value: True
+      weight_decay:
+        value: 0.007936009014320315
+      
+      #Convolutional Modules
+      num_T: #depth of temporal convolution blocks (3 blocks are concatenated)
+        value: 9
+      inception_window: #temporal kernel sizes for the 3 temporal blocks
+        value: [0.5, 0.25, 0.125]
+      num_S: #depth of spatial convolution blocks (2 blocks are concatenated)
+        value: 9 
+
+      #Linear Layer Classifier
+      hidden: #Layer before mapping to 20 classes
+        value: 128
+      dropout_rate: #Dropout before last layer
+        value: 0.6

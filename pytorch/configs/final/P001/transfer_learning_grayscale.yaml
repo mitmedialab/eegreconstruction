@@ -1,0 +1,42 @@
+name: Transfer_Learning
+program: transfer_learning.py
+method: random
+#run_cap: 30
+metric:
+  goal: maximize
+  name: val_acc
+parameters:
+  trainer:
+    parameters:
+      max_epochs:
+        value: 100 
+  model:
+    parameters:
+      batch_size: 
+        values: [32, 64, 128]
+      one_cycle_lr:
+        value: False
+      backbone_lr:
+        distribution: log_uniform_values
+        min: 0.0001
+        max: 0.01
+      classifier_lr:
+        distribution: log_uniform_values
+        min: 0.001
+        max: 0.05
+  datamodule:
+    parameters:
+      data_dir: 
+        value: "C:/Users/s_gue/Desktop/master_project/sven-thesis/data/preprocessed/wet/P001"
+        #value: "C:/Users/s_gue/Desktop/master_project/sven-thesis/data/preprocessed/dry/P001"
+      val_run: 
+        value: "sub-P001_ses-S003_task-Default_run-002_eeg"
+        #value: "sub-P001_ses-S001_task-Default_run-002_eeg"
+      special:
+        value: "grayscale_images"
+      batch_size:
+        values: [32, 64, 128]
+      num_workers:
+        value: 0
+      seed:
+        value: 42

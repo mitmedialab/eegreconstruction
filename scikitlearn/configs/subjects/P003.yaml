@@ -1,0 +1,12 @@
+name: P003
+parameters:
+  data:
+    parameters:
+      subject: 
+        value: "P003"
+      val_run: 
+        value: "sub-P003_ses-S003_task-Default_run-004_eeg"
+      num_workers:
+        value: 0
+      seed:
+        value: 42

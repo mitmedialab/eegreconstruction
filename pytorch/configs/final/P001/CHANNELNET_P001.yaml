@@ -1,0 +1,4 @@
+combine:
+- ./pytorch/configs/base.yaml
+- ./pytorch/configs/models/CHANNELNET.yaml
+- ./pytorch/configs/subjects/P001.yaml

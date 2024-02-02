@@ -1,0 +1,6 @@
+name: EfficientNet_gray_
+parameters:
+  model_name:
+    value: "efficientnet"
+  fourier:
+    value: False

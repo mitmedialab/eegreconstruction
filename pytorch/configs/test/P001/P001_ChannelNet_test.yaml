@@ -1,0 +1,84 @@
+#sweep: 34
+name: test_P001_ChannelNet
+program: train.py
+method: random
+run_cap: 1
+metric:
+  goal: maximize
+  name: val_acc
+parameters:
+  final_model:
+    value: True
+  trainer:
+    parameters:
+      max_epochs:
+        value: 30 
+  datamodule:
+    parameters:
+      data_dir: 
+        value: "./data/preprocessed/wet/P001"
+      test_dir:
+        value: "./data/test_sets/sub_P001/wet"
+      test_run:
+        value: "sub-P001_ses-S003_task-Default_run-003_eeg" #test set
+      batch_size:
+        value: 128
+      num_workers:
+        value: 0
+      seed:
+        value: 42
+  model_name: 
+    value: CHANNELNET
+  model:
+    parameters:
+      #General
+      in_channels:
+        value: 1
+      num_classes:
+        value: 20
+      input_width:
+        value: 500
+      input_height:
+        value: 8
+      lr:
+        value: 0.0018998998587441084
+      one_cycle:
+        value: True
+      weight_decay:
+        value: 0.002432245079574762
+
+      #Temporal Blocks
+      temp_channels: #depth of convolutions in temporal block
+        value: 5
+      num_temp_layers: #number of convolutions in temporal block
+        value: 4
+      temporal_kernel: #kernel size of temporal convolutions
+        value: !!python/tuple [1,33]
+      temporal_stride:
+        value: !!python/tuple [1,2]
+      temporal_dilation_list: #also controls the padding
+        value: [!!python/tuple [1,1], !!python/tuple [1,2], !!python/tuple [1,4], !!python/tuple [1,8], !!python/tuple [1,16]]
+      
+      #Spatial Blocks
+      out_channels: #depth of convolutions in spatial block
+        value: 4
+      num_spatial_layers: #number of convolutions in spatial block
+        value: 3 #leads to kernel sizes [(8,1), (4,1), (2,1)]
+      spatial_stride:
+        value: !!python/tuple [2,1]
+      
+      #Residual Blocks
+      num_residual_blocks:
+        value: 2
+
+      #Convolutional Classifier
+      embedding_size: 
+        value: 1000
+      down_kernel:
+        value: !!python/tuple [1,3]
+      down_stride:
+        value: 2
+      
+      #Used for all Modules
+      dropout:
+        value: 0.2

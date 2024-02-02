@@ -1,0 +1,12 @@
+name: P008
+parameters:
+  data:
+    parameters:
+      subject: 
+        value: "P008"
+      val_run: 
+        value: "sub-P008_ses-S004_task-Default_run-002_eeg"
+      num_workers:
+        value: 0
+      seed:
+        value: 42

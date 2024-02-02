@@ -1,0 +1,6 @@
+name: MobileNet_fourier_
+parameters:
+  model_name:
+    value: "mobilenet"
+  fourier:
+    value: True

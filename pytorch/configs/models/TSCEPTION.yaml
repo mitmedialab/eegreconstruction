@@ -1,0 +1,36 @@
+name: TSCEPTION_
+parameters:
+  model_name: 
+    value: TSCEPTION
+  model:
+    parameters:
+      #General
+      num_classes:
+        value: 20
+      input_size:
+        value: [8, 500]
+      sampling_rate: 
+        value: 250
+      lr:
+        distribution: log_uniform_values
+        min: 0.001 #0.00001
+        max: 0.01
+      one_cycle_lr:
+        value: True
+      weight_decay:
+        min: 0.0001
+        max: 0.001
+      
+      #Convolutional Modules
+      num_T: #depth of temporal convolution blocks (3 blocks are concatenated)
+        values: [3,9] 
+      inception_window: #temporal kernel sizes for the 3 temporal blocks
+        values: [[0.5, 0.25, 0.125], [0.5, 0.125, 0.03125]] #[0.25, 0.125, 0.0625]
+      num_S: #depth of spatial convolution blocks (2 blocks are concatenated)
+        values: [9,12] #15
+
+      #Linear Layer Classifier
+      hidden: #Layer before mapping to 20 classes
+        values: [128]
+      dropout_rate: #Dropout before last layer
+        values: [0.4, 0.6] #0.2

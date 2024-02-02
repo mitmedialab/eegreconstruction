@@ -1,0 +1,16 @@
+name: P001_final
+parameters:
+  datamodule:
+    parameters:
+      data_dir: 
+        value: "./data/preprocessed/wet/P001"
+        #value: "./data/preprocessed/dry/P001"
+      val_run: 
+        value: "sub-P001_ses-S003_task-Default_run-002_eeg"
+        #value: "sub-P001_ses-S001_task-Default_run-002_eeg"
+      batch_size:
+        values: [64, 128] #[32, 128]
+      num_workers:
+        value: 0
+      seed:
+        value: 42

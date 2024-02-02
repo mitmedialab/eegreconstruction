@@ -1,0 +1,6 @@
+name: RegNet_fourier_
+parameters:
+  model_name:
+    value: "regnet"
+  fourier:
+    value: True

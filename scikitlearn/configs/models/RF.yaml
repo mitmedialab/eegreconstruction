@@ -1,0 +1,14 @@
+name: RF_
+parameters:
+  model:
+    value: "Random_Forest"
+  criterion:
+    values: ['gini', 'entropy']
+  max_depth:
+    values: [2, 4, 8, 16]
+  min_samples_leaf:
+    values: [1, 2, 4]
+  min_samples_split:
+    values: [2, 4, 8]
+  n_estimators:
+    values: [10, 50, 100, 200]

@@ -1,0 +1,37 @@
+name: EEGNet_
+parameters:  
+  model_name: 
+    value: EEGNET
+  model:
+    #General
+    parameters:
+      in_chans: 
+        value: 8
+      n_classes:
+        value: 20
+      lr:
+        distribution: log_uniform_values
+        min: 0.001
+        max: 0.02
+      one_cycle_lr:
+        value: True
+      weight_decay:
+        min: 0.001
+        max: 0.01
+      input_window_samples:
+        value: 500
+      final_conv_length:
+        value: "auto"
+      #Convolutional Module
+      F1:
+        values: [16, 32, 64] #64
+      D:
+        value: 2
+      drop_prob:
+        values: [0.25, 0.5] #0.25
+      kernel_length:
+        value: 64 
+      pool_mode:
+        value: "max" #"mean"
+      momentum:
+        value: 0.1 

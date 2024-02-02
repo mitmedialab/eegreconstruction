@@ -1,0 +1,12 @@
+name: P006
+parameters:
+  data:
+    parameters:
+      subject: 
+        value: "P006"
+      val_run: 
+        value: "sub-P006_ses-S006_task-Default_run-003_eeg"
+      num_workers:
+        value: 0
+      seed:
+        value: 42

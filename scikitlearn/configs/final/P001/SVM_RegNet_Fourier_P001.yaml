@@ -1,0 +1,5 @@
+combine:
+- ./scikitlearn/configs/base.yaml
+- ./scikitlearn/configs/models/SVM.yaml
+- ./scikitlearn/configs/feature_extraction/regnet_fourier.yaml
+- ./scikitlearn/configs/subjects/P001.yaml

@@ -1,0 +1,69 @@
+#sweep: 38
+name: test_P001_Conformer
+program: train.py
+method: random
+run_cap: 1
+metric:
+  goal: maximize
+  name: val_acc
+parameters:
+  final_model:
+    value: True
+  trainer:
+    parameters:
+      max_epochs:
+        value: 50
+  datamodule:
+    parameters:
+      data_dir: 
+        value: "./data/preprocessed/wet/P001"
+      test_dir:
+        value: "./data/test_sets/sub_P001/wet"
+      test_run:
+        value: "sub-P001_ses-S003_task-Default_run-003_eeg" #test set
+      batch_size:
+        value: 128
+      num_workers:
+        value: 0
+      seed:
+        value: 42
+  model_name: 
+    value: CONFORMER
+  model:
+    parameters:
+      n_classes:
+        value: 20 
+      lr:
+        value: 0.00018305142612308944
+      one_cycle_lr:
+        value: True
+      warmup_cosine_annealing:
+        value: False
+      warmup_epochs:
+        value: 40
+      
+      #Convolutional Module
+      conv_depth:  
+        value: 45
+      temporal_conv:
+        value: 64
+      temporal_pool:
+        value: 20
+      emb_size:
+        value: 30
+      dropout_conv:
+        value: 0.5
+
+      #Attention Module
+      depth: 
+        value: 6 
+      num_heads:
+        value: 10
+      dropout_transformer:
+        value: 0.3
+      forward_expansion: # For classifier: expansion*emb_size = hidden_size of FC in Attention Module
+        value: 4
+
+      #Classifier Module
+      dropout_classifier: 
+        value: 0.5 

@@ -1,0 +1,6 @@
+name: RegNet_gray_
+parameters:
+  model_name:
+    value: "regnet"
+  fourier:
+    value: False

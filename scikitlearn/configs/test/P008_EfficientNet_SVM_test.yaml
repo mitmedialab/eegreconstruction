@@ -1,0 +1,30 @@
+name: test_P008_EfficientNet_SVM
+program: train.py
+method: random
+run_cap: 1
+metric:
+  goal: maximize
+  name: val_acc
+parameters:
+  test:
+    value: True
+  model_name:
+    value: "efficientnet"
+  fourier:
+    value: False
+  data:
+    parameters:
+      subject: 
+        value: "P008"
+      num_workers:
+        value: 0
+      seed:
+        value: 42
+  model:
+    value: "SVM"
+  C:
+    value: 27.97657691800575
+  gamma:
+    value: 0.11259199623733404
+  kernel:
+    value: "linear"

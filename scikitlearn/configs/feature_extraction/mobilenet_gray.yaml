@@ -1,0 +1,6 @@
+name: MobileNet_gray_
+parameters:
+  model_name:
+    value: "mobilenet"
+  fourier:
+    value: False

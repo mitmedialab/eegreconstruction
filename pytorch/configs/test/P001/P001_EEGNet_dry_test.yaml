@@ -1,0 +1,61 @@
+name: test_P001_EEGNet_dry
+program: train.py
+method: random
+run_cap: 1
+metric:
+  goal: maximize
+  name: val_acc
+parameters:
+  final_model:
+    value: True
+  trainer:
+    parameters:
+      max_epochs:
+        value: 30 
+  datamodule:
+    parameters:
+      data_dir: 
+        value: "./data/preprocessed/dry/P001"
+      test_dir:
+        value: "./data/test_sets/sub_P001/dry"
+      test_run:
+        value: sub-P001_ses-S001_task-Default_run-001_eeg #test set
+      batch_size:
+        value: 128
+      num_workers:
+        value: 0
+      seed:
+        value: 42
+  model_name: 
+        value: EEGNET
+  model:
+    parameters:
+      #General
+      in_chans:
+        value: 8
+      input_window_samples:
+        value: 500
+      n_classes:
+        value: 20
+      lr:
+        value: 0.005710563530461717
+      one_cycle_lr:
+        value: true
+      weight_decay:
+        value: 0.006173146758063501
+      final_conv_length:
+        value: auto
+      
+      #Convolutional Module
+      F1:
+        value: 64
+      D:
+        value: 2
+      kernel_length:
+        value: 64
+      pool_mode:
+          value: max
+      drop_prob:
+        value: 0.5
+      momentum:
+        value: 0.1

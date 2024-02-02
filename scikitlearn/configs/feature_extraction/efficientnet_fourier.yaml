@@ -1,0 +1,6 @@
+name: EfficientNet_fourier_
+parameters:
+  model_name:
+    value: "efficientnet"
+  fourier:
+    value: True

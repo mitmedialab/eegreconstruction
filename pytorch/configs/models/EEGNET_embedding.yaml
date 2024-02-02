@@ -1,0 +1,38 @@
+name: EEGNet_Embedding_512_
+parameters:  
+  model_name: 
+    value: EEGNET_Embedding
+  model:
+    #General
+    parameters:
+      in_chans: 
+        value: 8
+      n_classes:
+        value: 20
+      lr:
+        distribution: log_uniform_values
+        min: 0.005
+        max: 0.016
+      one_cycle_lr:
+        value: True
+      weight_decay:
+        min: 0.007
+        max: 0.01
+      input_window_samples:
+        value: 500
+      final_conv_length:
+        value: "auto"
+      
+      #Convolutional Module
+      F1:
+        value: 64 #32
+      D:
+        value: 2
+      kernel_length:
+        value: 64 # 128
+      pool_mode:
+        value: "max" #"mean"
+      drop_prob:
+        value: 0.25
+      momentum:
+        value: 0.1 #0.01

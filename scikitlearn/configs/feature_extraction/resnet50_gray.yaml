@@ -1,0 +1,6 @@
+name: ResNet_gray_
+parameters:
+  model_name:
+    value: "resnet50"
+  fourier:
+    value: False

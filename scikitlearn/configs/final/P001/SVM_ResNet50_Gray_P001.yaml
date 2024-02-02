@@ -1,0 +1,5 @@
+combine:
+- ./scikitlearn/configs/base.yaml
+- ./scikitlearn/configs/models/SVM.yaml
+- ./scikitlearn/configs/feature_extraction/resnet50_gray.yaml
+- ./scikitlearn/configs/subjects/P001.yaml

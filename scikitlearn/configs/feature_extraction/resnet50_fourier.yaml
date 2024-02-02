@@ -1,0 +1,6 @@
+name: ResNet_fourier_
+parameters:
+  model_name:
+    value: "resnet50"
+  fourier:
+    value: True

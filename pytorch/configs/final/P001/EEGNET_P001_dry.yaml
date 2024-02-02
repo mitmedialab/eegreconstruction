@@ -1,0 +1,4 @@
+combine:
+- ./pytorch/configs/base.yaml
+- ./pytorch/configs/models/EEGNET.yaml
+- ./pytorch/configs/subjects/P001_dry.yaml

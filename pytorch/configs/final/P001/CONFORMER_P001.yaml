@@ -1,0 +1,3 @@
+combine:
+- ./pytorch/configs/models/CONFORMER.yaml
+- ./pytorch/configs/subjects/P001.yaml

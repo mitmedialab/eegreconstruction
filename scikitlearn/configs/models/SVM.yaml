@@ -1,0 +1,14 @@
+name: SVM_
+parameters:
+  model:
+    value: "SVM"
+  C:
+    distribution: log_uniform
+    min: -10
+    max: 10
+  gamma:
+    distribution: log_uniform
+    min: -10
+    max: 10
+  kernel:
+    values: ['linear', 'rbf']

@@ -1,0 +1,10 @@
+# Base yaml file
+program: train.py
+method: random
+run_cap: 50
+metric:
+  goal: maximize
+  name: val_acc
+parameters:
+  test:
+    value: False

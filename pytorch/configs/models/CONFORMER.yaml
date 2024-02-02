@@ -1,0 +1,56 @@
+name: Conformer_
+program: train.py
+method: random
+run_cap: 100
+metric:
+  goal: maximize
+  name: val_acc
+parameters:  
+  final_model:
+    value: False
+  model_name: 
+    value: CONFORMER
+  trainer:
+    parameters:
+      max_epochs:
+        values: [50, 200]
+  model:
+    parameters:
+      n_classes:
+        value: 20 
+      lr:
+        distribution: log_uniform_values
+        min: 0.00005 #0.0001
+        max: 0.0006  #0.002
+      one_cycle_lr:
+        value: True
+      warmup_cosine_annealing:
+        value: False
+      warmup_epochs:
+        values: [20, 40, 60]
+      
+      #Convolutional Module
+      conv_depth:  
+        values: [35, 40, 45] #30, 50
+      temporal_conv:
+        value: 25
+      temporal_pool:
+        values: [15, 25] #35, 45
+      emb_size:
+        values: [30] #35, 40, 45, 50
+      dropout_conv:
+        value: 0.5
+
+      #Attention Module
+      depth: 
+        value: 6 
+      num_heads:
+        value: 10
+      dropout_transformer:
+        value: 0.3
+      forward_expansion: # For classifier: expansion*emb_size = hidden_size of FC in Attention Module
+        value: 4
+
+      #Classifier Module
+      dropout_classifier: 
+        value: 0.5     
