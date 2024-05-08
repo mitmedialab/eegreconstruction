@@ -99,7 +99,7 @@
   Additionally, you may use the notebook "run_all_test_classification.ipynb" to run the classifiers for each subject.
 
 ## How to replicate the reconstruction results
-14. Download the [finetuned.pth file](use the form below to request it in 'Data+Model Availability Section') and put the finetuned LDM file into the "./reconstruction/pretrains/EEG" folder.
+14. Download the [finetuned.pth file](https://drive.google.com/drive/u/0/folders/1UGxjFbOGTAsUmYfPQrqJlxgYg1pTqfHR) and put the finetuned LDM file into the "./reconstruction/pretrains/EEG" folder.
   Run the "./reconstruction/code/gen_eval.py" script.
 
 
@@ -179,8 +179,8 @@ Description of the important directories
 /utils: scripts used to download & select images, prepare experiment scripts, and visualize stuff 
 ```
 
-## Data + Model Availability
-The recordings (raw or preprocessed) as well as the model will be made available upon reasonable request using this form: https://forms.gle/o716fMcsJxswVxZC9
+## Data Availability
+The recordings (raw or preprocessed) will be made available upon reasonable request using this form: https://forms.gle/o716fMcsJxswVxZC9
 
 ## Acknowledgments
 This repository profited a lot from other peoples' work. We want to thank [CompVis](https://github.com/CompVis/latent-diffusion) for their pretrained Latent Diffusion Model and [MindVis](https://github.com/zjc062/mind-vis) for their implementation on using fMRI images to condition the LDM. For the reconstruction part we adopted large parts of their code and replaced the fMRI encoder with our EEG encoder.
