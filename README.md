@@ -197,8 +197,8 @@ Project Lead: Nataliya Kosmyna, Ph.D [Email](nkosmyna@mit.edu)
 Lead developer: Sven Guenther 
 [Email](sven.guenther@tum.de)
 
-# Paper - Reference this work
-- [Paper link](https://www.nature.com/articles/s41598-024-66228-1)
+# Paper - Cite and acknowledge this work
+-  Guenther, S., Kosmyna, N. & Maes, P. Image classification and reconstruction from low-density EEG. Sci Rep 14, 16436 (2024). https://doi.org/10.1038/s41598-024-66228-1
 
 
 # Copyright
