@@ -194,11 +194,11 @@ Additionally, we want to thank several groups for giving open access to the foll
 ## Authors
 Project Lead: Nataliya Kosmyna, Ph.D [Email](nkosmyna@mit.edu)
 
-Lead developer and main contributor: Sven Guenther 
+Lead developer: Sven Guenther 
 [Email](sven.guenther@tum.de)
 
-# TO-DO
-- add paper link to be used as a reference
+# Paper - Reference this work
+- [Paper link](https://www.nature.com/articles/s41598-024-66228-1)
 
 
 # Copyright
